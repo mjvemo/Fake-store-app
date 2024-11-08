@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
-import "./ProductDetail.css";
 
 function ProductDetail() {
   const { id } = useParams(); // Returns an object of key/value pairs of the dynamic params from the current URL that were matched by the route path.

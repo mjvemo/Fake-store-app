@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import "./ProductDetail.css";
+import "./ProductCard.css";
 
 function ProductCard({ product }) {
   return (
