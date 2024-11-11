@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import "./ProductDetail.css";
 
 function ProductDetail() {
   const { id } = useParams(); // Returns an object of key/value pairs of the dynamic params from the current URL that were matched by the route path.
@@ -17,9 +18,9 @@ function ProductDetail() {
   if (!product) return <p>Cargando Productos...</p>;
 
   return (
-    <div className="product-details">
+    <div className="product-detail">
+      <h2>{product.title}</h2>
       <img src={product.image} alt={product.tittle} />
-      <h2>{product.tittle}</h2>
       <p>{product.description}</p>
       <p>Precio: ${product.price}</p>
     </div>

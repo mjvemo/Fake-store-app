@@ -1,1 +1,31 @@
+/* .product-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 3px 3px 5px #8f8f8f;
+  margin: auto;
+} */
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+h1 {
+  color: #444343;
+}
+
+.product-grid {
+  display: flex;
+  flex-wrap: wrap; /* Allow cards to wrap on smaller screens */
+  justify-content: space-evenly; /* Space out the cards evenly */
+  gap: 2rem; /* Space between cards */
+  padding: 20px;
+  margin-top: 40px;
+}

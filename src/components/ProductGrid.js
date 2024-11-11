@@ -4,14 +4,14 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import ProductCard from "./ProductCard.js";
-import Paginator from "./Paginator.js";
+import Pagination from "./Pagination.js";
 import "./ProductGrid.css";
 
 function ProductGrid({ searchQuery }) {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const productsPerPage = 10;
+  const productsPerPage = 12;
 
   useEffect(() => {
     axios.get(`https:fakestoreapi.com/products`).then((response) => {
@@ -34,15 +34,18 @@ function ProductGrid({ searchQuery }) {
   );
 
   return (
-    <div className="product-grid">
-      {currentProducts.map((product) => (
-        <ProductCard key={product.id} product={product} />
-      ))}
-      <Paginator
-        totalProducts={filteredProducts.length}
-        productsPerPage={productsPerPage}
-        setCurrentPage={setCurrentPage}
-      />
+    <div className="container">
+      <h1>Nuestros Productos</h1>
+      <div className="product-grid">
+        {currentProducts.map((product) => (
+          <ProductCard key={product.id} product={product} />
+        ))}
+        <Pagination
+          totalProducts={filteredProducts.length}
+          productsPerPage={productsPerPage}
+          setCurrentPage={setCurrentPage}
+        />
+      </div>
     </div>
   );
 }

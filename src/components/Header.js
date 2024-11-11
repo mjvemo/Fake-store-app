@@ -13,6 +13,9 @@ function Header({ onSearch }) {
 
   return (
     <header className="header">
+      <a href="/">
+        <h2>MJ Store</h2>
+      </a>
       <input
         type="text"
         value={search}
